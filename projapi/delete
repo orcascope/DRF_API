@@ -1,0 +1,12 @@
+from projects.models import FA, Projects
+from projects.serializers import FASerializer as FAS
+from projects.serializers import ProjectSerializer as PS
+f2 = FA(name="Masonry")
+f2.save()
+fas = FAS(f2)
+fas.data
+
+ps = PS(Projects.objects.all(), many=True)
+ps.data
+
+
